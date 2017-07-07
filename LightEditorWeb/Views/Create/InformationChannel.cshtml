@@ -1,0 +1,63 @@
+﻿@using LightEditorWeb.Models
+@model InfoChannel
+    ViewBag.Title = "InformationChannel";
+}
+<br />
+<br />
+<h2>InformationChannel</h2>
+<br />
+<br />
+<br />
+@using (Html.BeginForm("InformationChannel", "Create", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <table class="table">
+        <tbody>
+            <tr>
+                <th><img src="~/Content/images/icon/RGB.png" width="75" title="RGB" /></th>
+                <th><img src="~/Content/images/icon/CYM.png" width="75" title="CMY" /></th>
+                <th><img src="~/Content/images/icon/ExtraColor.png" width="75" title="Extra color" /></th>
+                <th><img src="~/Content/images/icon/Dimmer.png" width="75" title="Dimmer" /></th>
+                <th><img src="~/Content/images/icon/PanTilt.png" width="75" title="Pan / Tilt" /></th>
+                <th><img src="~/Content/images/icon/GoboWheel.png" width="75" title="Gobo wheel" /></th>
+                <th><img src="~/Content/images/icon/GoboWheelTurn.png" width="75" title="Gobo wheel rotation" /></th>
+                <th><img src="~/Content/images/icon/GoboColor.png" width="75" title="Color wheel" /></th>
+            </tr>
+
+            <tr>
+                <th><img src="~/Content/images/icon/GoboColorTurn.png" width="75" title="Color wheel rotation" /></th>
+                <th><img src="~/Content/images/icon/Shutter.png" width="75" title="Shutter" /></th>
+                <th><img src="~/Content/images/icon/GoboRot.png" width="75" title="Gobo rotation" /></th>
+                <th><img src="~/Content/images/icon/GoboIndex.png" width="75" title="Gobo index" /></th>
+                <th><img src="~/Content/images/icon/GoboShake.png" width="75" title="Gobo shake" /></th>
+                <th><img src="~/Content/images/icon/GoboBounce.png" width="75" title="Gobo bounce" /></th>
+                <th><img src="~/Content/images/icon/Iris.png" width="75" title="Iris" /></th>
+                <th><img src="~/Content/images/icon/Zoom.png" width="75" title="Zoom" /></th>
+            </tr>
+
+            <tr>
+                <th><img src="~/Content/images/icon/Focus.png" width="75" title="Focus" /></th>
+                <th><img src="~/Content/images/icon/Frost.png" width="75" title="Frost" /></th>
+                <th><img src="~/Content/images/icon/Speed.png" width="75" title="Speed" /></th>
+                <th><img src="~/Content/images/icon/Lampe.png" width="75" title="Lamp" /></th>
+                <th><img src="~/Content/images/icon/Prism.png" width="75" title="Prism" /></th>
+                <th><img src="~/Content/images/icon/PrismRot.png" width="75" title="Prism rotation" /></th>
+                <th><img src="~/Content/images/icon/PrismIndex.png" width="75" title="Prism index" /></th>
+                <th><img src="~/Content/images/icon/Filtre.png" width="75" title="Filter" /></th>
+            </tr>
+
+            <tr>
+                <th><img src="~/Content/images/icon/BarrelRol.png" width="75" title="Barrel roll" /></th>
+                <th><img src="~/Content/images/icon/BarrelPan.png" width="75" title="Barrel pan" /></th>
+                <th><img src="~/Content/images/icon/Fog.png" width="75" title="Fog" /></th>
+                <th><img src="~/Content/images/icon/FramingBladeWheel.png" width="75" title="Framing blade wheel" /></th>
+                <th><img src="~/Content/images/icon/FramingBladeWheelRot.png" width="75" title="Framing blade rotation" /></th>
+                <th><img src="~/Content/images/icon/FramingBladeMovement.png" width="75" title="Framing blade movement" /></th>
+                <th><img src="~/Content/images/icon/AnimationWheel.png" width="75" title="Animation wheel" /></th>
+                <th><img src="~/Content/images/icon/Other.png" width="75" title="Other" /></th>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <input type="submit" value="Suivant" class="btn btn-lg btn-primary btn-block center-block" />
+    </div>
+}

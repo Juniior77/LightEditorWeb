@@ -1,0 +1,68 @@
+﻿@using LightEditorWeb.Models
+@model InfoFixture
+@{
+    ViewBag.Title = "index";
+}
+<br />
+<br />
+<h2>Creation d'une nouvelle fixture</h2>
+<br />
+<br />
+<br />
+@using (Html.BeginForm("InformationChannel", "Create", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+<table class="table">
+    <tbody>
+        <tr>
+            <th>@Html.Label("ID: ")</th>
+            <th>@Html.TextBoxFor(m => m.id, new { @class = "form-control" })</th>
+
+            <th>@Html.Label("Marque: ")</th>
+            <th>@Html.TextBoxFor(m => m.marque, new { @class = "form-control" })</th>
+        </tr>
+
+        <tr>
+            <th>@Html.Label("Version: ")</th>
+            <th>@Html.TextBoxFor(m => m.version, new { @class = "form-control" })</th>
+
+            <th>@Html.Label("Type: ")</th>
+            <th>@Html.TextBoxFor(m => m.type, new { @class = "form-control" })</th>
+        </tr>
+
+        <tr>
+            <th>@Html.Label("Lamp type: ")</th>
+            <th>@Html.TextBoxFor(m => m.lamp_type, new { @class = "form-control" })</th>
+
+            <th>@Html.Label("Lamp power: ")</th>
+            <th>@Html.TextBoxFor(m => m.lamp_power, new { @class = "form-control" })</th>
+        </tr>
+
+        <tr>
+            <th>@Html.Label("Beam: ")</th>
+            <th>@Html.TextBoxFor(m => m.beam, new { @class = "form-control" })</th>
+
+            <th>@Html.Label("Beam angle: ")</th>
+            <th>@Html.TextBoxFor(m => m.beam_angle, new { @class = "form-control" })</th>
+        </tr>
+
+        <tr>
+            <th>@Html.Label("PAN angle: ")</th>
+            <th>@Html.TextBoxFor(m => m.pan_angle, new { @class = "form-control" })</th>
+
+            <th>@Html.Label("PAN speed: ")</th>
+            <th>@Html.TextBoxFor(m => m.pan_speed, new { @class = "form-control" })</th>
+        </tr>
+
+        <tr>
+            <th>@Html.Label("TILT angle: ")</th>
+            <th>@Html.TextBoxFor(m => m.tilt_angle, new { @class = "form-control" })</th>
+
+            <th>@Html.Label("TILT speed: ")</th>
+            <th>@Html.TextBoxFor(m => m.tilt_speed, new { @class = "form-control" })</th>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <input type="submit" value="Suivant" class="btn btn-lg btn-primary btn-block center-block" />
+</div>
+}

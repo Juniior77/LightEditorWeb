@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Fixture DMX-512</h1>
+    <p class="lead">Gérer vos fixtures ou telecharger des fixtures déjà existantes !</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Créer</h2>
+        <p>Laisser vous guidez par quelques étapes pour créer votre fixture de jeux de lumiere qui n'existe pas.</p>
+        @Html.ActionLink("Accéder >>", "index", "Create", null, new { @class = "btn btn-default" })
+    </div>
+    <div class="col-md-4">
+        <h2>Editer</h2>
+        <p>Modifier une fixture qui existe déja, mais qui n'est pas totalement adapter a votre jeux de lumiere.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Consulter</h2>
+        <p>Consulter notre catalogue de fixtures déja existants.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
