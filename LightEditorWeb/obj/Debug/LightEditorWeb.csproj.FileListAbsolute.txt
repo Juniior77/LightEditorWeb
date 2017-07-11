@@ -69,6 +69,5 @@ C:\Users\VILAIRE\Desktop\PERSO\DMX\fixture\LightEditorWeb\LightEditorWeb\bin\fr\
 C:\Users\VILAIRE\Desktop\PERSO\DMX\fixture\LightEditorWeb\LightEditorWeb\bin\fr\System.Web.WebPages.resources.dll
 C:\Users\VILAIRE\Desktop\PERSO\DMX\fixture\LightEditorWeb\LightEditorWeb\bin\fr\System.Web.WebPages.Deployment.resources.dll
 C:\Users\VILAIRE\Desktop\PERSO\DMX\fixture\LightEditorWeb\LightEditorWeb\bin\fr\System.Web.WebPages.Razor.resources.dll
-C:\Users\VILAIRE\Desktop\PERSO\DMX\fixture\LightEditorWeb\LightEditorWeb\obj\Debug\LightEditorWeb.csprojResolveAssemblyReference.cache
 C:\Users\VILAIRE\Desktop\PERSO\DMX\fixture\LightEditorWeb\LightEditorWeb\obj\Debug\LightEditorWeb.dll
 C:\Users\VILAIRE\Desktop\PERSO\DMX\fixture\LightEditorWeb\LightEditorWeb\obj\Debug\LightEditorWeb.pdb

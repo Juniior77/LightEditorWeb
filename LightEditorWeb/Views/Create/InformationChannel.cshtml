@@ -1,63 +1,410 @@
 ﻿@using LightEditorWeb.Models
-@model InfoChannel
+@model InfoFixture
+@{ 
     ViewBag.Title = "InformationChannel";
 }
-<br />
 <br />
 <h2>InformationChannel</h2>
 <br />
 <br />
-<br />
 @using (Html.BeginForm("InformationChannel", "Create", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
-    <table class="table">
-        <tbody>
-            <tr>
-                <th><img src="~/Content/images/icon/RGB.png" width="75" title="RGB" /></th>
-                <th><img src="~/Content/images/icon/CYM.png" width="75" title="CMY" /></th>
-                <th><img src="~/Content/images/icon/ExtraColor.png" width="75" title="Extra color" /></th>
-                <th><img src="~/Content/images/icon/Dimmer.png" width="75" title="Dimmer" /></th>
-                <th><img src="~/Content/images/icon/PanTilt.png" width="75" title="Pan / Tilt" /></th>
-                <th><img src="~/Content/images/icon/GoboWheel.png" width="75" title="Gobo wheel" /></th>
-                <th><img src="~/Content/images/icon/GoboWheelTurn.png" width="75" title="Gobo wheel rotation" /></th>
-                <th><img src="~/Content/images/icon/GoboColor.png" width="75" title="Color wheel" /></th>
-            </tr>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th><img class="selectimg" src="~/Content/images/icon/RGB.png" width="75" title="RGB" onclick="rgb()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/CYM.png" width="75" title="CMY" onclick="cym()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/ExtraColor.png" width="75" title="Extra color" onclick="extraColor()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/Dimmer.png" width="75" title="Dimmer" onclick="dimmer()" /></th>
+                    </tr>
+                    <tr>
+                        <th><img class="selectimg" src="~/Content/images/icon/PanTilt.png" width="75" title="Pan / Tilt" onclick="panTilt()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/GoboWheel.png" width="75" title="Gobo wheel" onclick="goboWheel()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/GoboWheelTurn.png" width="75" title="Gobo wheel rotation" onclick="goboWheelRotation()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/GoboColor.png" width="75" title="Color wheel" onclick="colorWheel()" /></th>
+                    </tr>
 
-            <tr>
-                <th><img src="~/Content/images/icon/GoboColorTurn.png" width="75" title="Color wheel rotation" /></th>
-                <th><img src="~/Content/images/icon/Shutter.png" width="75" title="Shutter" /></th>
-                <th><img src="~/Content/images/icon/GoboRot.png" width="75" title="Gobo rotation" /></th>
-                <th><img src="~/Content/images/icon/GoboIndex.png" width="75" title="Gobo index" /></th>
-                <th><img src="~/Content/images/icon/GoboShake.png" width="75" title="Gobo shake" /></th>
-                <th><img src="~/Content/images/icon/GoboBounce.png" width="75" title="Gobo bounce" /></th>
-                <th><img src="~/Content/images/icon/Iris.png" width="75" title="Iris" /></th>
-                <th><img src="~/Content/images/icon/Zoom.png" width="75" title="Zoom" /></th>
-            </tr>
+                    <tr>
+                        <th><img class="selectimg" src="~/Content/images/icon/GoboColorTurn.png" width="75" title="Color wheel rotation" onclick="colorWheelRotation()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/Shutter.png" width="75" title="Shutter" onclick="shutter()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/GoboRot.png" width="75" title="Gobo rotation" onclick="goboRotation()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/GoboIndex.png" width="75" title="Gobo index" onclick="goboIndex()" /></th>
+                    </tr>
+                    <tr>
+                        <th><img class="selectimg" src="~/Content/images/icon/GoboShake.png" width="75" title="Gobo shake" onclick="goboShake()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/GoboBounce.png" width="75" title="Gobo bounce" onclick="goboBounce()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/Iris.png" width="75" title="Iris" onclick="iris()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/Zoom.png" width="75" title="Zoom" onclick="zoom()" /></th>
+                    </tr>
 
-            <tr>
-                <th><img src="~/Content/images/icon/Focus.png" width="75" title="Focus" /></th>
-                <th><img src="~/Content/images/icon/Frost.png" width="75" title="Frost" /></th>
-                <th><img src="~/Content/images/icon/Speed.png" width="75" title="Speed" /></th>
-                <th><img src="~/Content/images/icon/Lampe.png" width="75" title="Lamp" /></th>
-                <th><img src="~/Content/images/icon/Prism.png" width="75" title="Prism" /></th>
-                <th><img src="~/Content/images/icon/PrismRot.png" width="75" title="Prism rotation" /></th>
-                <th><img src="~/Content/images/icon/PrismIndex.png" width="75" title="Prism index" /></th>
-                <th><img src="~/Content/images/icon/Filtre.png" width="75" title="Filter" /></th>
-            </tr>
+                    <tr>
+                        <th><img class="selectimg" src="~/Content/images/icon/Focus.png" width="75" title="Focus" onclick="mfocus()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/Frost.png" width="75" title="Frost" onclick="frost()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/Speed.png" width="75" title="Speed" onclick="speed()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/Lampe.png" width="75" title="Lamp" onclick="lamp()" /></th>
+                    </tr>
+                    <tr>
+                        <th><img class="selectimg" src="~/Content/images/icon/Prism.png" width="75" title="Prism" onclick="prism()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/PrismRot.png" width="75" title="Prism rotation" onclick="prismRotation()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/PrismIndex.png" width="75" title="Prism index" onclick="prismIndex()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/Filtre.png" width="75" title="Filter" onclick="filtre()" /></th>
+                    </tr>
 
-            <tr>
-                <th><img src="~/Content/images/icon/BarrelRol.png" width="75" title="Barrel roll" /></th>
-                <th><img src="~/Content/images/icon/BarrelPan.png" width="75" title="Barrel pan" /></th>
-                <th><img src="~/Content/images/icon/Fog.png" width="75" title="Fog" /></th>
-                <th><img src="~/Content/images/icon/FramingBladeWheel.png" width="75" title="Framing blade wheel" /></th>
-                <th><img src="~/Content/images/icon/FramingBladeWheelRot.png" width="75" title="Framing blade rotation" /></th>
-                <th><img src="~/Content/images/icon/FramingBladeMovement.png" width="75" title="Framing blade movement" /></th>
-                <th><img src="~/Content/images/icon/AnimationWheel.png" width="75" title="Animation wheel" /></th>
-                <th><img src="~/Content/images/icon/Other.png" width="75" title="Other" /></th>
-            </tr>
-        </tbody>
-    </table>
-    <div>
-        <input type="submit" value="Suivant" class="btn btn-lg btn-primary btn-block center-block" />
+                    <tr>
+                        <th><img class="selectimg" src="~/Content/images/icon/BarrelRol.png" width="75" title="Barrel roll" onclick="barrelRoll()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/BarrelPan.png" width="75" title="Barrel pan" onclick="barrelPan()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/Fog.png" width="75" title="Fog" onclick="fog()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/FramingBladeWheel.png" width="75" title="Framing blade wheel" onclick="framingBladeWheel()" /></th>
+                    </tr>
+                    <tr>
+                        <th><img class="selectimg" src="~/Content/images/icon/FramingBladeWheelRot.png" width="75" title="Framing blade rotation" onclick="framingBladeRotation()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/FramingBladeMovement.png" width="75" title="Framing blade movement" onclick="framingBladeMovement()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/AnimationWheel.png" width="75" title="Animation wheel" onclick="animationWheel()" /></th>
+                        <th><img class="selectimg" src="~/Content/images/icon/Other.png" width="75" title="Other" onclick="other()" /></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6" id="ListFonction">
+            @Html.Partial("InformationChannelPartial")
+        </div>
     </div>
+        <input type="submit" value="Suivant" class="btn btn-lg btn-primary btn-block center-block" />
+            
 }
+
+<script type="text/javascript">
+    function rgb() {
+        $.ajax({
+            url: '@Url.Action("rgb")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function cym() {
+        $.ajax({
+            url: '@Url.Action("cym")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function extraColor() {
+        $.ajax({
+            url: '@Url.Action("extraColor")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function dimmer() {
+        $.ajax({
+            url: '@Url.Action("dimmer")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function panTilt() {
+        $.ajax({
+            url: '@Url.Action("panTilt")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function goboWheel() {
+        $.ajax({
+            url: '@Url.Action("goboWheel")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function goboWheelRotation() {
+        $.ajax({
+            url: '@Url.Action("goboWheelRotation")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function colorWheel() {
+        $.ajax({
+            url: '@Url.Action("colorWheel")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function colorWheelRotation() {
+        $.ajax({
+            url: '@Url.Action("colorWheelRotation")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function shutter() {
+        $.ajax({
+            url: '@Url.Action("shutter")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function goboRotation() {
+        $.ajax({
+            url: '@Url.Action("goboRotation")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function goboIndex() {
+        $.ajax({
+            url: '@Url.Action("goboIndex")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function goboShake() {
+        $.ajax({
+            url: '@Url.Action("goboShake")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function goboBounce() {
+        $.ajax({
+            url: '@Url.Action("goboBounce")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function iris() {
+        $.ajax({
+            url: '@Url.Action("iris")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function zoom() {
+        $.ajax({
+            url: '@Url.Action("zoom")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function mfocus() {
+        $.ajax({
+            url: '@Url.Action("mfocus")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function frost() {
+        $.ajax({
+            url: '@Url.Action("frost")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function speed() {
+        $.ajax({
+            url: '@Url.Action("speed")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function lamp() {
+        $.ajax({
+            url: '@Url.Action("lamp")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function prism() {
+        $.ajax({
+            url: '@Url.Action("prism")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function prismRotation() {
+        $.ajax({
+            url: '@Url.Action("prismRotation")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function prismIndex() {
+        $.ajax({
+            url: '@Url.Action("prismIndex")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function filtre() {
+        $.ajax({
+            url: '@Url.Action("filtre")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function barrelRoll() {
+        $.ajax({
+            url: '@Url.Action("barrelRoll")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function barrelPan() {
+        $.ajax({
+            url: '@Url.Action("barrelPan")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function fog() {
+        $.ajax({
+            url: '@Url.Action("fog")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function framingBladeWheel() {
+        $.ajax({
+            url: '@Url.Action("framingBladeWheel")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function framingBladeRotation() {
+        $.ajax({
+            url: '@Url.Action("framingBladeRotation")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function framingBladeMovement() {
+        $.ajax({
+            url: '@Url.Action("framingBladeMovement")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function animationWheel() {
+        $.ajax({
+            url: '@Url.Action("animationWheel")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+    function other() {
+        $.ajax({
+            url: '@Url.Action("other")',
+            type: "POST",
+            dataType: "html",
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+        function del(indice) {
+        $.ajax({
+            url: '@Url.Action("deleteFonction")',
+            type: "POST",
+            dataType: "html",
+            data: { fonction: indice },
+            success: function (result) {
+                $('#ListFonction').html(result);
+            }
+        });
+    }
+</script>

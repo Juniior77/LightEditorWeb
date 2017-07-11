@@ -1,0 +1,20 @@
+﻿@using LightEditorWeb.Models
+@model InfoFixture
+<div class="row">
+        @{
+            for (int i = 0; i < Model.listFonction.Count(); i++)
+            {
+                <div class="col-md-4">
+                    <img src="@Model.listFonction[i].image" height="75" />
+                </div>
+                <div class="col-md-4">
+                    @Html.Label(Model.listFonction[i].fonction)
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-secondary" onclick="del(@i)">Delete</button>
+                </div>
+                <br />
+            }
+        }
+</div>
+
